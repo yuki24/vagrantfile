@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.network :private_network, ip: "192.168.33.10"
   # config.vm.network :public_network
   config.ssh.forward_agent = true
-  config.vm.synced_folder "~/GitHub", "/Users/yuki/GitHub"
+  config.vm.synced_folder "~/GitHub", "/GitHub"
 
   config.vm.provider "vmware_fusion" do |v|
     v.vmx["memsize"] = "2048"
