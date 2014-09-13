@@ -25,6 +25,7 @@ chown -R vagrant /usr/local/rvm
 
 git config --global user.name "Yuki Nishijima"
 git config --global user.email mail@yukinishijima.net
+git config --global core.editor emacs
 
 echo "Change /etc/postgresql/{version}/main/pg_hba.conf to always trust local connection:"
 echo "  http://stackoverflow.com/questions/5421807/set-blank-password-for-postgresql-user"
