@@ -51,6 +51,9 @@ cd rinari
 git submodule init
 git submodule update
 
+cp /Users/yuki/GitHub/Vagrant/.bash_aliases ~/.bash_aliases
+cp /Users/yuki/GitHub/Vagrant/.bash_yuki24 ~/.bash_yuki24
+
 # postgres config
 su - postgres -c "createuser vagrant -d -r -s"
 
