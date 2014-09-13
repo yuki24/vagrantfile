@@ -15,7 +15,7 @@ apt-get install -y postgresql postgresql-server-dev-9.3 postgresql-contrib
 curl https://raw.githubusercontent.com/creationix/nvm/v0.7.0/install.sh | sh
 source ~/.profile
 
-# Installs rvm.
+# Installs rvm
 curl -sSL https://get.rvm.io | bash
 /usr/local/rvm/bin/rvm reload
 /usr/local/rvm/bin/rvm install 2.1.2
@@ -31,8 +31,18 @@ sudo ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/loca
 sudo ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
 sudo ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/bin/phantomjs
 
+# my emacs lisp
+cd ~/
+git clone git://github.com/yuki24/emacs.el.git site-lisp
+cp site-lisp/.emacs.el .
+cd .emacs.d
+git clone git://github.com/eschulte/rinari.git
+cd rinari
+git submodule init
+git submodule update
+
+# postgres config
+su - postgres -c "createuser vagrant -d -r -s"
+
 echo "Change /etc/postgresql/{version}/main/pg_hba.conf to always trust local connection:"
 echo "  http://stackoverflow.com/questions/5421807/set-blank-password-for-postgresql-user"
-echo ""
-echo "Then run:"
-echo 'psql -U postgres -d template1 -w --no-password -h localhost -p 5432 -t -c "CREATE USER vagrant; ALTER USER vagrant CREATEDB;"'
