@@ -21,12 +21,3 @@ git config --global user.email mail@yukinishijima.net
 git config --global core.editor emacs
 
 export EDITOR=emacs
-
-alias gti="git"
-alias gst="git status"
-alias gbr="git branch"
-alias glg="git log"
-
-alias be="bundle exec"
-alias bs="bundle show"
-alias bo="bundle open"
