@@ -2,7 +2,7 @@
 
 apt-get update
 apt-get upgrade -y
-apt-get install -y git svn emacs build-essential
+apt-get install -y git svn emacs build-essential silversearcher-ag tree
 
 # nokogiri requirements
 apt-get install -y libxslt-dev libxml2-dev
