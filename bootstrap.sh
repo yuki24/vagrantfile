@@ -2,7 +2,7 @@
 
 apt-get update
 apt-get upgrade -y
-apt-get install -y git svn emacs build-essential silversearcher-ag tree
+apt-get install -y git svn emacs build-essential silversearcher-ag tree tcl8.5 memcached
 
 # nokogiri requirements
 apt-get install -y libxslt-dev libxml2-dev
@@ -31,7 +31,17 @@ sudo ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/loca
 sudo ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
 sudo ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/bin/phantomjs
 
-# my emacs lisp
+# Installs redis
+cd /tmp
+wget http://download.redis.io/releases/redis-2.8.15.tar.gz
+tar xzf redis-2.8.15.tar.gz
+cd redis-2.8.15
+make
+make install
+# cd utils
+# ./install_server.sh
+
+# My emacs lisp
 cd ~/
 git clone git://github.com/yuki24/emacs.el.git site-lisp
 cp site-lisp/.emacs.el .
