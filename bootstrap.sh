@@ -2,7 +2,7 @@
 
 apt-get update
 apt-get upgrade -y
-apt-get install -y git svn emacs build-essential silversearcher-ag tree tcl8.5 memcached
+apt-get install -y git emacs build-essential silversearcher-ag tree tcl8.5 memcached
 
 # nokogiri requirements
 apt-get install -y libxslt-dev libxml2-dev
@@ -38,11 +38,11 @@ tar xzf redis-2.8.15.tar.gz
 cd redis-2.8.15
 make
 make install
-# cd utils
-# ./install_server.sh
+cd utils
+./install_server.sh
 
 # My emacs lisp
-cd ~/
+cd /home/vagrant
 git clone git://github.com/yuki24/emacs.el.git site-lisp
 cp site-lisp/.emacs.el .
 cd .emacs.d
