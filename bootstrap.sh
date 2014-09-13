@@ -47,10 +47,9 @@ wget https://gist.githubusercontent.com/yuki24/f43ab05fba77f6a43e09/raw/4b7c95d0
 
 # My emacs lisp
 git clone git://github.com/yuki24/emacs.el.git site-lisp
-git checkout vagrant
-cp site-lisp/.emacs.el .
-mkdir .emacs.d
-cd .emacs.d
+cd site-lisp && git checkout vagrant && cd -
+ln -s site-lisp/.emacs.el .emacs.el
+mkdir .emacs.d && cd .emacs.d
 git clone git://github.com/eschulte/rinari.git
 cd rinari
 git submodule init
