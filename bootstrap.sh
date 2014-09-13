@@ -23,6 +23,14 @@ rvm use 2.0.0 --default
 
 chown -R vagrant /usr/local/rvm
 
+# Installs phantomjs
+cd /usr/local/share
+sudo wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2
+sudo tar xjf phantomjs-1.9.7-linux-x86_64.tar.bz2
+sudo ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/share/phantomjs
+sudo ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
+sudo ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/bin/phantomjs
+
 git config --global user.name "Yuki Nishijima"
 git config --global user.email mail@yukinishijima.net
 git config --global core.editor emacs
