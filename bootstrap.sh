@@ -45,6 +45,7 @@ cd utils
 cd /home/vagrant
 git clone git://github.com/yuki24/emacs.el.git site-lisp
 cp site-lisp/.emacs.el .
+mkdir .emacs.d
 cd .emacs.d
 git clone git://github.com/eschulte/rinari.git
 cd rinari
