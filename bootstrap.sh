@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
+# Add MongoDB repository
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+
 apt-get update
 apt-get upgrade -y
-apt-get install -y git emacs build-essential silversearcher-ag tree tcl8.5 memcached
+apt-get install -y git emacs build-essential silversearcher-ag tree tcl8.5 memcached mongodb-org
 
 # nokogiri requirements
 apt-get install -y libxslt-dev libxml2-dev
