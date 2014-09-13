@@ -2,7 +2,7 @@
 
 apt-get update
 apt-get upgrade -y
-apt-get install -y git svn build-essential xvfb firefox
+apt-get install -y git svn emacs build-essential
 
 # nokogiri requirements
 apt-get install -y libxslt-dev libxml2-dev
@@ -23,8 +23,11 @@ rvm use 2.0.0 --default
 
 chown -R vagrant /usr/local/rvm
 
+git config --global user.name "Yuki Nishijima"
+git config --global user.email mail@yukinishijima.net
+
 echo "Change /etc/postgresql/{version}/main/pg_hba.conf to always trust local connection:"
 echo "  http://stackoverflow.com/questions/5421807/set-blank-password-for-postgresql-user"
-echo "\n"
+echo ""
 echo "Then run:"
 echo '  -u postgres psql -d template1 -w --no-password -h localhost -p 5432 -t -c "CREATE USER vagrant; ALTER USER vagrant CREATEDB;'
