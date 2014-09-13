@@ -41,9 +41,13 @@ make install
 cd utils
 ./install_server.sh
 
-# My emacs lisp
 cd /home/vagrant
+wget https://gist.githubusercontent.com/yuki24/f43ab05fba77f6a43e09/raw/e998ae90da024ff2c3ade24de30c39cbc7300aeb/.bash_aliases
+wget https://gist.githubusercontent.com/yuki24/f43ab05fba77f6a43e09/raw/4b7c95d068ccec01c13877fd9785d727faa99e48/.bash_yuki24
+
+# My emacs lisp
 git clone git://github.com/yuki24/emacs.el.git site-lisp
+git checkout vagrant
 cp site-lisp/.emacs.el .
 mkdir .emacs.d
 cd .emacs.d
@@ -52,8 +56,7 @@ cd rinari
 git submodule init
 git submodule update
 
-cp /Users/yuki/GitHub/Vagrant/.bash_aliases ~/.bash_aliases
-cp /Users/yuki/GitHub/Vagrant/.bash_yuki24 ~/.bash_yuki24
+chown vagrant -R /home/vagrant
 
 # postgres config
 su - postgres -c "createuser vagrant -d -r -s"
