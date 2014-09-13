@@ -39,4 +39,4 @@ echo "Change /etc/postgresql/{version}/main/pg_hba.conf to always trust local co
 echo "  http://stackoverflow.com/questions/5421807/set-blank-password-for-postgresql-user"
 echo ""
 echo "Then run:"
-echo '  -u postgres psql -d template1 -w --no-password -h localhost -p 5432 -t -c "CREATE USER vagrant; ALTER USER vagrant CREATEDB;'
+echo 'psql -U postgres -d template1 -w --no-password -h localhost -p 5432 -t -c "CREATE USER vagrant; ALTER USER vagrant CREATEDB;"'
