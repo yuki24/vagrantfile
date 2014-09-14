@@ -16,6 +16,8 @@ export LANG="en_US.utf8"
 export LC_ALL="en_US.utf8"
 export LC_MESSAGES="en_US.utf8"
 
+[ -s "/home/vagrant/.nvm/nvm.sh" ] && . "/home/vagrant/.nvm/nvm.sh" # This loads nvm
+
 git config --global user.name "Yuki Nishijima"
 git config --global user.email mail@yukinishijima.net
 git config --global core.editor emacs
