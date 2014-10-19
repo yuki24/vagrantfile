@@ -16,10 +16,24 @@ export LANG="en_US.utf8"
 export LC_ALL="en_US.utf8"
 export LC_MESSAGES="en_US.utf8"
 
-[ -s "/home/vagrant/.nvm/nvm.sh" ] && . "/home/vagrant/.nvm/nvm.sh" # This loads nvm
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# This loads NVM
+[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
 
 git config --global user.name "Yuki Nishijima"
 git config --global user.email mail@yukinishijima.net
 git config --global core.editor emacs
+git config --global push.default matching
+
+git config --global alias.co checkout
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.br branch
+git config --global alias.tags 'tag -l'
+git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+git config --global alias.type 'cat-file -t'
+git config --global alias.dump 'cat-file -p'
 
 export EDITOR=emacs
