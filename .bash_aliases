@@ -24,6 +24,8 @@ alias reloadbash="echo 'source ~/.bashrc'; source ~/.bashrc"
 
 alias e="emacs"
 
+alias publishblog="s3cmd sync --delete-removed --acl-public --no-preserve --cf-invalidate _site/ s3://yukinishijima-blog/ --verbose"
+
 if [ -f ~/.bash_yuki24 ]; then
     . ~/.bash_yuki24
 fi
