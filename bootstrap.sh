@@ -22,8 +22,8 @@ source ~/.profile
 # Installs rvm
 curl -sSL https://get.rvm.io | bash
 /usr/local/rvm/bin/rvm reload
-/usr/local/rvm/bin/rvm install 2.1.2
-/usr/local/rvm/bin/rvm use 2.1.2 --default
+/usr/local/rvm/bin/rvm install 2.1.3
+/usr/local/rvm/bin/rvm use 2.1.3 --default
 
 chown -R vagrant /usr/local/rvm
 
