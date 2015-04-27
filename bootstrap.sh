@@ -46,8 +46,8 @@ cd utils
 ./install_server.sh
 
 cd /home/vagrant
-wget https://gist.githubusercontent.com/yuki24/f43ab05fba77f6a43e09/raw/e998ae90da024ff2c3ade24de30c39cbc7300aeb/.bash_aliases
-wget https://gist.githubusercontent.com/yuki24/f43ab05fba77f6a43e09/raw/4b7c95d068ccec01c13877fd9785d727faa99e48/.bash_yuki24
+ln -s /GitHub/Vagrant/.bash_aliases ~/.bash_aliases
+ln -s /GitHub/Vagrant/.bash_yuki24 ~/.bash_yuki24
 
 # My emacs lisp
 git clone git://github.com/yuki24/emacs.el.git site-lisp
