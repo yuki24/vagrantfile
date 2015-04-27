@@ -49,15 +49,18 @@ cd /home/vagrant
 ln -s /GitHub/Vagrant/.bash_aliases ~/.bash_aliases
 ln -s /GitHub/Vagrant/.bash_yuki24 ~/.bash_yuki24
 
-# My emacs lisp
+# installs cask
+curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+
+# sets up emacs for me
+cd /Github
 git clone git://github.com/yuki24/emacs.el.git site-lisp
-cd site-lisp && git checkout vagrant && cd -
-ln -s site-lisp/.emacs.el .emacs.el
-mkdir .emacs.d && cd .emacs.d
-git clone git://github.com/eschulte/rinari.git
-cd rinari
-git submodule init
-git submodule update
+cd site-lisp && git checkout vagrant
+ln -s /GitHub/site-lisp/.emacs.el ~/.emacs.el
+mkdir ~/.emacs.d
+ln -s /GitHub/Vagrant/Cask ~/.emacs.d/Cask
+cd ~/.emacs.d
+cask install
 
 chown vagrant -R /home/vagrant
 
