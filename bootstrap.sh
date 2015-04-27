@@ -51,6 +51,7 @@ ln -s /GitHub/Vagrant/.bash_yuki24 ~/.bash_yuki24
 
 # installs cask
 curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+export PATH="/root/.cask/bin:$PATH"
 
 # sets up emacs for me
 cd /Github

@@ -38,3 +38,6 @@ git config --global alias.dump 'cat-file -p'
 git config --global alias.amend 'commit --amend -Chead'
 
 export EDITOR=emacs
+
+# Cask needs this
+export PATH="/root/.cask/bin:$PATH"
