@@ -16,7 +16,7 @@ apt-get install -y postgresql postgresql-server-dev-9.3 postgresql-contrib
 
 # Installs nvm. picked up from:
 #   https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server
-curl https://raw.githubusercontent.com/creationix/nvm/v0.7.0/install.sh | sh
+curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | sh
 source ~/.profile
 
 # Installs rvm
