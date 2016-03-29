@@ -21,7 +21,11 @@ rbenv install 2.3.0-dev
 cd /home/vagrant
 git clone https://gist.github.com/f43ab05fba77f6a43e09.git Vagrant
 ln -s ~/Vagrant/.bash_aliases ~/.bash_aliases
-ln -s ~/Vagrant/.bash_yuki24 ~/.bash_yuki24
+
+echo 'if [ -f ~/.bash_custom ]; then' >> ~/.bashrc
+echo '  . ~/.bash_custom'             >> ~/.bashrc
+echo 'fi'                             >> ~/.bashrc
+ln -s ~/Vagrant/.bash_custom ~/.bash_custom
 
 # Install cask
 curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
