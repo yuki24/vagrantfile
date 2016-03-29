@@ -42,6 +42,10 @@ ln -s ~/Vagrant/Cask ~/.emacs.d/Cask
 cd ~/.emacs.d
 cask install
 
+# set up gitignore
+curl https://www.gitignore.io/api/emacs%2Cosx%2Cintellij%2Cvim > ~/.gitignore
+git config --global core.excludesfile '~/.gitignore'
+
 # postgres config
 sudo su - postgres -c "createuser vagrant -d -r -s"
 echo "Change /etc/postgresql/{version}/main/pg_hba.conf to always trust local connection:"
