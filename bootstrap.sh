@@ -19,7 +19,7 @@ rbenv install 2.3.0
 rbenv install 2.4.0-dev
 
 cd /home/vagrant
-git clone https://github.com/yuki24/vagrantfile.git
+git clone https://github.com/yuki24/vagrantfile.git Vagrant
 ln -s ~/Vagrant/.bash_aliases ~/.bash_aliases
 
 echo 'if [ -f ~/.bash_custom ]; then' >> ~/.bashrc
