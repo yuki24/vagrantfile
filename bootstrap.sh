@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Install nvm
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
 source ~/.profile
 
 # Install rbenv
