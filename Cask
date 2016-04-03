@@ -40,3 +40,4 @@
 (depends-on "rinari")
 (depends-on "yasnippet")
 (depends-on "multiple-cursors")
+(depends-on "yaml-mode")
