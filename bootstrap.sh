@@ -15,8 +15,8 @@ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-rbenv install 2.3.0
-rbenv install 2.4.0-dev
+# rbenv install 2.3.0
+# rbenv install 2.4.0-dev
 
 cd /home/vagrant
 git clone https://github.com/yuki24/vagrantfile.git Vagrant
