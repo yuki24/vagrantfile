@@ -61,9 +61,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # redis
     cd /tmp
-    wget http://download.redis.io/releases/redis-3.0.7.tar.gz
-    tar xzf redis-3.0.7.tar.gz
-    cd redis-3.0.7
+    wget http://download.redis.io/releases/redis-3.2.1.tar.gz
+    tar xzf redis-3.2.1.tar.gz
+    cd redis-3.2.1
     make
     make install
     cd utils
