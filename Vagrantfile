@@ -33,12 +33,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
     echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
 
+    # Add Git-core 2.9
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A1715D88E1DF1F24
+    echo "deb http://ppa.launchpad.net/git-core/ppa/ubuntu trusty main" > /etc/apt/sources.list.d/git.list
+    echo "deb-src http://ppa.launchpad.net/git-core/ppa/ubuntu trusty main" >> /etc/apt/sources.list.d/git.list
+
     apt-get remove upppet
     apt-get autoremove
 
     apt-get update
     apt-get upgrade -y
-    apt-get install -y git build-essential silversearcher-ag tree tcl8.5 memcached mongodb-org autoconf libssl-dev libreadline-dev bison
+    apt-get install -y git git-core git-man build-essential silversearcher-ag tree tcl8.5 memcached mongodb-org autoconf libssl-dev libreadline-dev bison
 
     # nokogiri requirements
     apt-get install -y libxslt-dev libxml2-dev
