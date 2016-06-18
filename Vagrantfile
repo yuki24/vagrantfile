@@ -6,7 +6,18 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "phusion/ubuntu-14.04-amd64"
-  config.vm.network :forwarded_port, guest: 3000, host: 3000
+
+  [
+    3000,
+    3001,
+    8000,
+    8001,
+    8080,
+    8081
+  ].each do |port|
+    config.vm.network :forwarded_port, guest: port, host: port
+  end
+
   # config.vm.network :private_network, ip: "192.168.33.10"
   # config.vm.network :public_network
   config.ssh.forward_agent = true
