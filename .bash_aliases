@@ -26,6 +26,8 @@ alias e="emacs"
 
 alias publishblog="s3cmd sync --delete-removed --acl-public --no-preserve --cf-invalidate _site/ s3://yukinishijima-blog/ --verbose"
 
+alias more='pygmentize -g -f 256'
+
 if [ -f ~/.bash_custom ]; then
     . ~/.bash_custom
 fi
