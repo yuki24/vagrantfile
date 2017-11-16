@@ -16,15 +16,19 @@ export LANG="en_US.utf8"
 export LC_ALL="en_US.utf8"
 export LC_MESSAGES="en_US.utf8"
 
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# rbenv
+export PATH="/usr/local/sbin:$PATH"
+eval "$(rbenv init -)"
 
-# This loads NVM
-[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm use 8.9.0
 
+# Git
 git config --global user.name "Yuki Nishijima"
-git config --global user.email mail@yukinishijima.net
-git config --global core.editor emacs
+git config --global user.email yk.nishijima@gmail.com
+git config --global core.editor vim
 git config --global push.default matching
 
 git config --global alias.co checkout
@@ -38,7 +42,36 @@ git config --global alias.dump 'cat-file -p'
 git config --global alias.amend 'commit --amend -Chead'
 git config --global alias.lg "log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph"
 
-export EDITOR=emacs
+export EDITOR=vim
 
-# Cask needs this
+# Cask
 export PATH="/root/.cask/bin:$PATH"
+
+# Android
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# scmpuff
+eval "$(scmpuff init -s)"
+
+# alias
+alias gti="git"
+alias gst="gs"
+alias gbr="git branch"
+alias glg="git log"
+alias gfu="git fetch upstream"
+alias gfo="git fetch origin"
+alias gpo="git push origin"
+alias gpu="git push upstream"
+alias gd="git diff"
+alias gdc="git diff --cached"
+alias gg="git grep"
+alias be="bundle exec"
+alias bs="bundle show"
+alias bo="bundle open"
+alias reloadbash="echo 'source ~/.bashrc'; source ~/.bashrc"
+alias e="emacs"
+alias publishblog="s3cmd sync --delete-removed --acl-public --no-preserve --cf-invalidate _site/ s3://yukinishijima-blog/ --verbose"
+alias more='pygmentize -g -f 256'
+
